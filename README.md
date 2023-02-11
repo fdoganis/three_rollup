@@ -52,5 +52,4 @@ Note that `three/examples/jsm` is successfully aliased aliased as `three/addons`
 
 ## TODO
 
-- [ ] test GLB loader
-- [ ] configure rollup for live reloading
+- [ ] configure Rollup for live reloading (alternatively, try another more developer-friendly bundler)
