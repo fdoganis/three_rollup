@@ -49,5 +49,6 @@ Keep in mind that all files references in `index.html` are relative to the `dist
 
 Note that `three/examples/jsm` is successfully aliased aliased as `three/addons` to keep changes to `main.js` minimal.
 
-Live relaoding works. Remember to close your browser if you get a message saying that the default port is already being used.
+Live reloading works.
+Remember to close your browser if you get a message saying that the default port is already being used.
 
