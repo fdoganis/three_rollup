@@ -1,6 +1,8 @@
 import resolve from '@rollup/plugin-node-resolve'; // locate and bundle dependencies in node_modules (mandatory)
 import { terser } from "rollup-plugin-terser"; // code minification (optional)
 import copy from 'rollup-plugin-copy'; // to copy files (css, assets etc)
+import livereload from 'rollup-plugin-livereload'; // to reload automatically after source code changes
+import serve from 'rollup-plugin-serve';
 
 export default {
 	input: 'src/main.js',
@@ -18,5 +20,5 @@ export default {
 			{ src: 'assets/*', dest: 'dist/assets/' },
 		]
 	}),
-	resolve(), terser() ]
+	resolve(), terser(), serve('dist'), livereload('dist') ]
 };
