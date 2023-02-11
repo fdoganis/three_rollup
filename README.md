@@ -43,13 +43,11 @@ Some official THREE.js examples relying on libs like `ammo` or using resources (
 - modifications to the html might be needed: some code requires `container` or `stats` `div`s
 - external libraries might require modifications to `rollup_config.js`
 
-
 Check `rollup_config.js`
 
 Keep in mind that all files references in `index.html` are relative to the `dist` folder hierarchy.
 
 Note that `three/examples/jsm` is successfully aliased aliased as `three/addons` to keep changes to `main.js` minimal.
 
-## TODO
+Live relaoding works. Remember to close your browser if you get a message saying that the default port is already being used.
 
-- [ ] configure Rollup for live reloading (alternatively, try another more developer-friendly bundler)
