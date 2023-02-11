@@ -1,4 +1,18 @@
-import * as THREE from 'three'
+// Import only what you need, to help your bundler optimize final code size using tree shaking
+// see https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking)
+import {
+  PerspectiveCamera,
+  Scene,
+  WebGLRenderer,
+  BoxGeometry,
+  Mesh,
+  MeshNormalMaterial,
+  AmbientLight,
+  Clock
+} from 'three';
+
+// If you prefer to import the whole library, with the THREE prefix, use the following line instead:
+// import * as THREE from 'three'
 
 // NOTE: three/addons alias is supported by Rollup: you can use it interchangeably with three/examples/jsm/  
 
@@ -11,49 +25,49 @@ import {
 } from 'three/addons/loaders/GLTFLoader.js';
 
 // Example of hard link to official repo for data, if needed
-// const MODEL_PATH = 'https://raw.githubusercontent.com/mrdoob/three.js/r148/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb';
+// const MODEL_PATH = 'https://raw.githubusercontent.com/mrdoob/js/r148/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb';
 
 
 // INSERT CODE HERE
 
-const scene = new THREE.Scene();
+const scene = new Scene();
 const aspect = window.innerWidth / window.innerHeight;
-const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
+const camera = new PerspectiveCamera(75, aspect, 0.1, 1000);
 
-const light = new THREE.AmbientLight(0xffffff, 1.0); // soft white light
+const light = new AmbientLight(0xffffff, 1.0); // soft white light
 scene.add(light);
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.listenToKeyEvents(window); // optional
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshNormalMaterial();
-const cube = new THREE.Mesh(geometry, material);
+const geometry = new BoxGeometry(1, 1, 1);
+const material = new MeshNormalMaterial();
+const cube = new Mesh(geometry, material);
 
 scene.add(cube);
 
 function loadData() {
- new GLTFLoader()
-     .setPath('assets/models/')
-     .load('test.glb', gltfReader);
+  new GLTFLoader()
+    .setPath('assets/models/')
+    .load('test.glb', gltfReader);
 }
 
 
 function gltfReader(gltf) {
- let testModel = null;
+  let testModel = null;
 
- testModel = gltf.scene;
+  testModel = gltf.scene;
 
- if (testModel != null) {
-     console.log("Model loaded:  " + testModel);
+  if (testModel != null) {
+    console.log("Model loaded:  " + testModel);
     scene.add(gltf.scene);
- } else {
-     console.log("Load FAILED.  ");
- }
+  } else {
+    console.log("Load FAILED.  ");
+  }
 }
 
 loadData();
@@ -62,9 +76,9 @@ loadData();
 camera.position.z = 3;
 
 
-const clock = new THREE.Clock();
+const clock = new Clock();
 
- // Main loop
+// Main loop
 const animation = () => {
 
   renderer.setAnimationLoop(animation); // requestAnimationFrame() replacement, compatible with XR 
@@ -82,11 +96,7 @@ const animation = () => {
 
 animation();
 
-
 window.addEventListener('resize', onWindowResize, false);
-
-animate();
-
 
 function onWindowResize() {
 

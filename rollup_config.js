@@ -7,6 +7,7 @@ export default {
 	input: 'src/main.js',
 	output: [
 		{
+			sourcemap: true,
 			format: 'umd',
 			name: 'MYAPP',
 			file: 'dist/main.js'
