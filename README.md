@@ -32,7 +32,7 @@ Launch the local server
 `npm start`
 
 
-Open `http://localhost:3000/` in your favorite for testing.
+Open `http://localhost:3000/` in your favorite browser for testing.
 
 
 ## Modifying the code
@@ -40,12 +40,17 @@ Open `http://localhost:3000/` in your favorite for testing.
 Simply edit files in `src` such as `src/main.js` and save.
 Some official THREE.js examples relying on libs like `ammo` or using resources (textures, models) or involving containers need to be adapted to work:
 - assets should go into `assets` directory, and the path of the loaders must be adapted
-- modifications to the html might be needed, some code requires `container` or `stats` `div`s
-- external libs might require modifications to `rollup_config.js`
+- modifications to the html might be needed: some code requires `container` or `stats` `div`s
+- external libraries might require modifications to `rollup_config.js`
 
 
 Check `rollup_config.js`
 
 Keep in mind that all files references in `index.html` are relative to the `dist` folder hierarchy.
 
+Note that `three/examples/jsm` is successfully aliased aliased as `three/addons` to keep changes to `main.js` minimal.
 
+## TODO
+
+- [ ] test GLB loader
+- [ ] configure rollup for live reloading
