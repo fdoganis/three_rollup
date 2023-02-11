@@ -17,7 +17,9 @@ export default {
 			{ src: 'src/index.html', dest: 'dist/' },
 			{ src: 'src/*.css', dest: 'dist/' },
 			{ src: 'assets/*', dest: 'dist/assets/' },
+			{ src: 'node_modules/three/examples/jsm/libs/ammo.wasm.js', dest: 'dist/jsm/libs/' },
+			{ src: 'node_modules/three/examples/jsm/libs/ammo.wasm.wasm', dest: 'dist/jsm/libs/' }
 		]
 	}),
-	resolve(), terser(), serve('dist'), livereload('dist') ]
+	resolve(), terser() ]
 };
