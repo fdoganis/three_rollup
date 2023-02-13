@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "npm run start & rollup -w -c \"rollup_config.js\"",
-    "start": "mpm run open & serve dist",
+    "start": "npm run open & serve dist",
     "open": "open http://localhost:3000/",
     "clean": "rm -rf dist"
   },
