@@ -47,7 +47,7 @@ Check `rollup_config.js`
 
 Keep in mind that all files references in `index.html` are relative to the `dist` folder hierarchy.
 
-Note that `three/examples/jsm` is successfully aliased aliased as `three/addons` to keep changes to `main.js` minimal.
+Note that `three/examples/jsm` is successfully aliased as `three/addons` to keep changes to `main.js` minimal.
 
 Live reloading works.
 Remember to close your browser if you get a message saying that the default port is already being used.
