@@ -10,6 +10,9 @@ Includes VS Code integration (debug script and IntelliSense).
 
 Based on https://github.com/Mugen87/three-jsm
 
+UPDATE: Consider using this new template instead: https://github.com/fdoganis/three_vite
+It uses Vite (which relies on Rollup for compatibility and esbuild for speed).
+
 ## Installation
 
 After downloading the repository, go to the root directory and install all dependencies using:
